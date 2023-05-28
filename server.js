@@ -8,6 +8,8 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const morgan = require("morgan");
 const cors = require("cors");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 //application level middleware
 app.use(cors());
@@ -18,6 +20,9 @@ app.use(express.urlencoded({extended: false}));
 
 //server
 const port = process.env.PORT || 8000;
+
+//routers level middleware
+readdirSync("./routers").map(r => app.use("/api/v1", require(`./routers/${r}`)));
 
 //Connect to DB and start server
 mongoose
