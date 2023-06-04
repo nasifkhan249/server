@@ -32,3 +32,6 @@ mongoose
             console.log(`Server Running on port ${port}`);
         })
     })
+    .catch((err)=>{
+        err.massage();
+    })

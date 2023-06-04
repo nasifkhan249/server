@@ -5,12 +5,10 @@ const userSchema = new Schema(
     {
         name: {
             type: String,
-            trim: true,
             required: true,
         },
         email: {
             type: String,
-            trim: true,
             required: true,
             unique: true,
         },
@@ -22,7 +20,6 @@ const userSchema = new Schema(
         },
         address: {
             type: String,
-            trim: true,
         },
         role: {
             type: Number,
