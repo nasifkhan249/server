@@ -133,7 +133,7 @@ exports.UpdatedProfile=async(req,res)=>{
 
         );
         updated.password=undefined;
-        updated.role=undefined
+        // updated.role=undefined
         res.json(updated);
     } catch (err) {
         console.log(err);
